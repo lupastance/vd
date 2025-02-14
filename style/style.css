@@ -1,0 +1,118 @@
+* { box-sizing: border-box; user-select: none; }
+
+:root {
+    --pink: #e6bdc6
+    --text: whitesmoke;
+}
+
+html {
+    background-color: rgb(219, 231, 241);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    font-family: "Tangerine";
+    font-size: 4em;
+    text-align: center;
+    margin: 20px 0;
+    color: rgb(248, 45, 13);
+    font-weight: 900;
+}
+
+body{
+    display: grid;
+}
+
+#container {
+    
+    background: linear-gradient(45deg, #e6bdc6, #dec5bf, #d6cfb9, #d1d9b6, #d2e6bd);
+    /* background-size: 400% 400%; */
+    animation: moveGradient 3s ease infinite;
+    color: var(--text);
+
+    margin: 5% auto;
+    padding: 5%;
+    border-radius: 12px;
+    text-align: center;
+}
+
+img {
+    border-radius: 12px;
+    max-height: 400px;
+}
+
+button {
+    all: unset;
+    background-color: rgb(87, 157, 62);
+    padding: 10px;
+    border-radius: 12px;
+    margin-right: 10px;
+    width: 100px;
+    color: whitesmoke;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+button:active {
+    -webkit-tap-highlight-color: transparent;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+#button-no {
+    background-color: rgb(226, 57, 57);
+}
+
+#img-container{
+    position: relative;
+}
+
+#baka {
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    border-radius: 50%;
+    font-size: .9em;
+    font-weight: 600;
+    right: 35%;
+    bottom: 35%;
+    transform: rotate(-10deg);
+}
+
+#baka::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: 20%;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgb(255, 255, 255);
+    transform: rotate(-10deg);
+}
+
+.no {
+    position: absolute;
+    cursor: pointer;
+}
+
+.destroy {
+    opacity: 0;
+    transition: opacity 2s ease-out;
+    pointer-events: none;
+}
+
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
