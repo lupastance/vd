@@ -28,6 +28,7 @@ button.addEventListener("mouseover", (event) => {
 
 
 buttonYes.addEventListener("click", () => {
+    buttonYes.innerText = 'MORE !';
     button.classList.add('destroy');
     buttons.style.gridTemplateColumns = '1fr';
     rain.src = 'assets/cat-yes.gif';
