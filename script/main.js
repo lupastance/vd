@@ -5,6 +5,10 @@ const title = document.getElementById("title");
 const bakaSpan = document.getElementById("baka");
 const sonido = document.getElementById("sonido");
 const sonidoKiss = document.getElementById("sonido-kiss");
+const plus = document.getElementById("plus");
+const buttons = document.querySelector('.buttons');
+
+let plusCounter = 0;
 
 button.addEventListener("mouseover", (event) => {
     button.classList.add('no');
@@ -25,10 +29,26 @@ button.addEventListener("mouseover", (event) => {
 
 buttonYes.addEventListener("click", () => {
     button.classList.add('destroy');
+    buttons.style.gridTemplateColumns = '1fr';
     rain.src = 'assets/cat-yes.gif';
-    title.innerHTML = 'I love you <br> mi trucha  favorita';
+    title.innerHTML = 'Have a nice day<br>Hug Soul<br>💚🩵';
     sonidoKiss.currentTime = 0; // Reinicia el sonido si ya se ha reproducido
     sonidoKiss.play();
+    
+    if(plusCounter > 0){
+        const plus = document.createElement('span');
+
+        plus.classList.add('plus');
+        plus.innerText = '+1';
+
+        rain.after(plus);
+        
+        setTimeout(() => {
+            plus.remove();
+        }, 2000);
+    }
+
+    plusCounter++;
 })
 
 function baka() {
