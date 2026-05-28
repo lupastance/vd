@@ -28,6 +28,7 @@ button.addEventListener("mouseover", (event) => {
 
 
 buttonYes.addEventListener("click", () => {
+    window.scrollTo(0, 0);
     buttonYes.innerText = 'MORE !';
     button.classList.add('destroy');
     buttons.style.gridTemplateColumns = '1fr';
